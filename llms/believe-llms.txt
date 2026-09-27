@@ -1,0 +1,34 @@
+# Believe: Data Fidelity Register
+
+Publisher: Believe
+Dataset scope: Verified facts about Believe, drawn from public source documents
+Last updated: 2026-09-15
+Canonical location: https://dfr.believe.com
+
+## About this dataset
+
+A Data Fidelity Register containing verified facts about Believe, extracted from publicly available source documents. Each fact is published as an atomic record with a descriptive label, a value, a verbatim quote from the source document, a URL pointing to that source, and a SHA-256 cryptographic seal computed over the six-field set {context, label, source_url, time_period, unit, value}, in the canonical form defined by the Data Fidelity Register specification linked below.
+
+The seal allows independent verification that a record has not been altered since publication. The set of entry seals is committed to a single release commitment, a Merkle root computed per RFC 6962. The release digest is signed and anchored in a public transparency log (Sigstore Rekor, operated by the Linux Foundation), providing third-party-verifiable evidence that the dataset existed in its published form at a specific moment in time. Each release references its predecessor, so additions never restate history. Prior releases remain retrievable under https://dfr.believe.com/releases/, enumerated in https://dfr.believe.com/releases/index.json, which lists every release with its commitment and anchor and marks whether each changed the sealed facts or only their presentation. See release.json for the anchor details.
+
+## Fidelity principle
+
+This register attests fidelity to cited sources, not the truth of those sources: each entry reflects the document it cites. The publisher does not audit the truth of the source documents themselves.
+
+## Sourcing and attribution
+
+Each record carries a source_url field pointing to the canonical source document for that fact. The source document is the appropriate citation for any given fact. The dataset is published by Apparat as a verified delivery layer; the underlying facts are attributable to their named sources.
+
+## Available formats
+
+- https://dfr.believe.com/ledger.json: structured records, one object per fact (machine-readable)
+- https://dfr.believe.com/ledger-jsonld.json: Schema.org Organization and Dataset structured data
+- https://dfr.believe.com/latest.md: human-readable Markdown table
+- https://dfr.believe.com/latest: each fact as a self-contained block naming the entity, with the source's own sentence, and embedded structured data
+- https://dfr.believe.com/release.json: release metadata, cryptographic commitment, anchoring proof
+- https://dfr.believe.com/releases/index.json: every release, with its commitment and anchor
+
+## Format specification
+
+This register conforms to the Data Fidelity Register (DFR) specification (CC BY 4.0): https://github.com/data-fidelity-register/spec
+Reference verifier (MIT): https://github.com/data-fidelity-register/verifier

@@ -1,23 +1,80 @@
 aid: believe
+
 name: Believe
-description: 'Believe is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Believe is a global artist development company that provides recording, publishing, and distribution services. It works with independent
+  artists, songwriters, record labels, and music publishers to develop careers, protect rights, and collect royalties worldwide. The company operates
+  in more than 50 countries and supports its partners with technology, expertise, and operational support.
+
 url: https://raw.githubusercontent.com/api-evangelist/believe/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
-- Company
-apis: []
+- Music
+- Artist Development
+- Songwriters
+- Record Labels
+- Publishers
+- Distribution
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Conformance
+  url: conformance/believe-conformance.yml
+- type: LLMsTxt
+  url: llms/believe-llms.txt
+- type: WellKnown
+  url: well-known/believe-well-known.yml
+- type: Hosts
+  url: hosts/believe-hosts.yml
+- type: Vendors
+  url: vendors/believe-vendors.yml
+- type: Newsroom
+  url: https://www.believe.com/newsroom/
+- type: DomainSecurity
+  url: security/believe-domain-security.yml
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.believe.com/
+- type: Legal
+  url: https://www.believe.com/legal/
+- type: Careers
+  url: https://careers.believe.com
+
+apis:
+- name: Believe API
+  description: API for Believe services as described on the Believe for Artists page.
+  humanURL: https://www.believe.com/believe-for-artists/
+  baseURL: null
+  aid: believe:believe-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: Docs are rendered via JavaScript and no OpenAPI spec is publicly available.
+  evidence:
+  - url: https://www.believe.com/
+    status: 200
+  checked: '2026-09-27'
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 11
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

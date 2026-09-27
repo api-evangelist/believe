@@ -1,0 +1,11 @@
+generated: '2026-09-27'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://www.believe.com/ethics-compliance/
+sources:
+- https://www.believe.com/ethics-compliance/
+standards:
+- id: gdpr
+  conforms: true
+  evidence: A dedicated tool to keep the GDPR record and other data protection records.
+docs: https://www.believe.com/ethics-compliance/
